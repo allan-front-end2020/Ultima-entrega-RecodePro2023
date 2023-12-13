@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Minha Página Thymeleaf</title>
+
+    <!-- Link para a folha de estilo CSS -->
+    <link rel="stylesheet" type="text/css" th:href="@{/caminho/do/seu-arquivo.css}" />
+</head>
+<body>
+
+    <header>
+        
+    </header>
+
+    <section>
+        <h1>Vai se fuder</h1>
+    </section>
+
+    <footer>
+        
+    </footer>
+
+</body>
+</html>

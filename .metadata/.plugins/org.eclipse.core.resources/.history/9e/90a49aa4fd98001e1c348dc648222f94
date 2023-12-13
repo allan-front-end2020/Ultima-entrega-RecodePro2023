@@ -1,0 +1,56 @@
+package com.exemple.serviceImplements;
+
+import java.util.List;
+
+import javax.management.RuntimeErrorException;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.repositorie.DestinoRepository;
+import com.exemple.models.Destino;
+import com.exemple.services.DestinoService;
+
+@Service
+public class DestinoServiceImplements implements DestinoService {
+	
+	
+	@Autowired
+	private DestinoRepository cr;
+	
+	
+
+	public List<Destino> getAllDestino() {
+		
+		return cr.findAll();
+	}
+
+	public Destino getDestinoById(Long id) {
+	
+		return cr.findById(id).orElseThrow(()-> new RuntimeErrorException(null, "EEEEEEEEEEEEEEEEE"));
+	}
+
+	public Destino saveDestino(Destino destino) {
+	
+		return cr.save(destino);
+	}
+
+	public Destino upDateDestino(Long id, Destino destinoUpdated) {
+		
+		Destino destinoExiste = cr.findById(id).orElseThrow(()-> new RuntimeErrorException(null, "EEEEEEEEEEEEEEEEE"));
+	    destinoExiste.setNome(destinoUpdated.getNome());
+
+		
+		return cr.save(destinoExiste);
+	}
+
+
+	public void deleteById(Long id) {
+		cr.deleteById(id);
+		
+	}
+	
+	
+	
+
+}

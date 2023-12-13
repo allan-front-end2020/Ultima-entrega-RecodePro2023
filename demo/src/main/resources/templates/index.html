@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Minha Página Thymeleaf</title>
+      <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}" />
+</head>
+<body>
+
+    <header>
+        <h1 th:text="${titulo}">Título Padrão</h1>
+    </header>
+
+    <section>
+        <p th:text="${mensagem}">Mensagem padrão</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Minha Página Thymeleaf</p>
+    </footer>
+
+</body>
+</html>

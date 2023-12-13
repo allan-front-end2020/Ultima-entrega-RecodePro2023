@@ -1,0 +1,25 @@
+package com.exemple.services;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.exemple.models.Cliente;
+
+
+public interface ClienteService extends JpaRepository<Cliente, Long> {
+
+	
+	
+List<Cliente> getAllCliente();
+	
+	Cliente getClienteById(Long id);
+	
+	Cliente saveCliente( Cliente cliente);
+	
+	Cliente upDateCliente(Long id, Cliente clienteUpdated);
+	
+	
+	void deleteById(Long id);
+	
+}

@@ -1,0 +1,8 @@
+package com.exemple.models;
+
+import jakarta.persistence.Entity;
+
+@Entity
+public class Destino {
+
+}

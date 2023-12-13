@@ -1,0 +1,5 @@
+package com.example.repositorie;
+
+public interface ClienteRepositorie {
+
+}

@@ -1,0 +1,5 @@
+package com.exemple.services;
+
+public interface DestinoService {
+
+}

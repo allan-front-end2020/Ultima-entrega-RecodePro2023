@@ -1,0 +1,53 @@
+package com.exemple.serviceImplements;
+
+import java.util.List;
+
+import javax.management.RuntimeErrorException;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.repositorie.ClienteRepositorie;
+import com.exemple.models.Cliente;
+import com.exemple.services.ClienteService;
+
+
+@Service
+public class ClienteServiceImplements  implements ClienteService{
+	
+
+	@Autowired
+	public List<Cliente> getAllCliente() {
+		
+		return sr.findAll();
+	}
+
+	@Override
+	public Cliente getClienteById(Long id) {
+	
+		return sr.findById(id).orElseThrow(()-> new RuntimeErrorException(null, "EEEEEEEEEEEEEEEEE"));
+	}
+
+	@Override
+	public Cliente saveCliente(Cliente destino) {
+	
+		return sr.save(destino);
+	}
+
+	@Override
+	public Cliente upDateCliente(Long id, Cliente destinoUpdated) {
+		
+		Cliente destinoExiste = sr.findById(id).orElseThrow(()-> new RuntimeErrorException(null, "EEEEEEEEEEEEEEEEE"));
+	    destinoExiste.setNome(destinoUpdated.getNome());
+
+		
+		return sr.save(destinoExiste);
+	}
+
+	@Override
+	public void deleteById(Long id) {
+		sr.deleteById(id);
+		
+	}
+
+}
